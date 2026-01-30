@@ -7,13 +7,15 @@ export class SPH {
   mass: number;
   density: number;
   pressure: number;
+  boundDamping: number;
 
-  constructor(position: THREE.Vector3) {
+  constructor(position: THREE.Vector3, mass: number = 10.0, boundDamping: number = -0.8) {
     this.position = position;
     this.velocity = new THREE.Vector3(0, 0, 0);
     this.force = new THREE.Vector3(0, 0, 0);
-    this.mass = 1.0;
+    this.mass = mass;
     this.density = 0.0;
     this.pressure = 0.0;
+    this.boundDamping = boundDamping;
   }
 }
